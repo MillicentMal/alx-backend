@@ -2,6 +2,7 @@
 """
 basic flask app : Hello World
 """
+from urllib import request
 from flask import Flask, render_template
 from flask_babel import Babel
 
@@ -14,12 +15,16 @@ class Config(object):
     BABEL_DEFAULT_TIMEZONE = 'UTC'
 app.config.from_object('1-app.Config')
 
+@babel.localeselector
+def get_locale():
+    return request.accept_languages.best_match(['en', 'fr'])
+
 @app.route("/")
 def index():
     """
     returns index.html
     """
-    return render_template('1-index.html')
+    return render_template('2-index.html')
 
 
 if __name__ == '__main__':
