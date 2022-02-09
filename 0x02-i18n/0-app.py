@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 """ 
 basic flask app : Hello World
 """
@@ -6,8 +6,12 @@ from flask import Flask, redirect, render_template
 
 app = Flask(__name__)
 
+
 @app.route("/")
 def index():
+    """ 
+    returns index.html
+    """
     return render_template('0-index.html')
 
 
