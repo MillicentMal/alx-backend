@@ -1,3 +1,7 @@
+#!/usr/bin/python3
+""" 
+basic flask app : Hello World
+"""
 from flask import Flask, redirect, render_template
 
 app = Flask(__name__)
